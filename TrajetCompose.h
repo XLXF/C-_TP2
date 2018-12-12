@@ -73,7 +73,7 @@ protected:
   //----------------------------------------------------- Méthodes protégées
   
   //----------------------------------------------------- Attributs protégés
-  TrajetSimple** trajets;
+  Trajet** trajets;
   unsigned int nbTrajets;
 };
 

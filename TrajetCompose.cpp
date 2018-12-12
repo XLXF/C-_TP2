@@ -31,19 +31,19 @@ using namespace std;
 		int i;
 		for (i=0; i < nbTrajets; i++)
 		{
-			trajets[i]->TrajetSimple::Afficher();
+			trajets[i]->Trajet::Afficher();
 		}
 	}
 
     const char* TrajetCompose:: villeDepart() const
     {
-        return trajets[0]->TrajetSimple::villeDepart();
+        return trajets[0]->Trajet::villeDepart();
     }
 
     const char* TrajetCompose:: villeArrive() const
 
     {
-        return trajets[nbTrajets-1]->TrajetSimple::villeArrive();
+        return trajets[nbTrajets-1]->Trajet::villeArrive();
     }
     const char* TrajetCompose:: Transport() const
 
@@ -68,7 +68,7 @@ TrajetCompose & TrajetCompose::operator = ( const TrajetCompose & unTrajetCompos
 {
     this->~TrajetCompose();
     nbTrajets = unTrajetCompose.nbTrajets;
-    trajets = new TrajetSimple*[nbTrajets];
+    trajets = new Trajet*[nbTrajets];
     for(int i = 0; i<nbTrajets;i++)
     {
         trajets[i] = new TrajetSimple(unTrajetCompose.trajets[i]->Nom(),unTrajetCompose.trajets[i]->villeDepart(),unTrajetCompose.trajets[i]->villeArrive(),unTrajetCompose.trajets[i]->Transport());
@@ -88,7 +88,7 @@ TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose )
 } //----- Fin de TrajetCompose (constructeur de copie)
 
 
-TrajetCompose::TrajetCompose () : trajets(new TrajetSimple* [1]), nbTrajets(0)
+TrajetCompose::TrajetCompose () : trajets(new Trajet* [1]), nbTrajets(0)
 // Algorithme :
 //
 {
@@ -115,7 +115,7 @@ TrajetCompose::~TrajetCompose ( )
 #endif
     for (int i =0; i<nbTrajets;i++)
     {
-		trajets[i]->~TrajetSimple();
+		trajets[i]->~Trajet();
 	}
   delete [] trajets;
   trajets = NULL;
