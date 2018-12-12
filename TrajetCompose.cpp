@@ -57,6 +57,13 @@ using namespace std;
         return "pas de nom pour un trajet compose";
         
     }
+	
+	void TrajetCompose::AjoutTrajet(TrajetSimple *ts)
+	{
+		trajets [nbTrajets] = new TrajetSimple(ts->Nom(),ts->villeDepart(),ts->villeArrive(),ts->Transport());
+		nbTrajets ++;
+	}
+
 
 
 
@@ -104,14 +111,6 @@ TrajetCompose::TrajetCompose () : trajets(new Trajet* [1]), nbTrajets(0)
 #endif
 } //----- Fin de TrajetCompose
 
-void TrajetCompose::AjoutTrajet(TrajetSimple *ts)
-{
-#ifdef MAP
-    cout << "Appel au fonction ajout trajet de <TrajetCompose>" << "\r\n";
-#endif
-trajets [nbTrajets] = new TrajetSimple(ts->Nom(),ts->villeDepart(),ts->villeArrive(),ts->Transport());
-nbTrajets ++;
-} //----- Fin de TrajetCompose
 
 TrajetCompose::~TrajetCompose ( )
 // Algorithme :
