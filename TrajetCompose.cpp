@@ -95,7 +95,7 @@ TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose )
 } //----- Fin de TrajetCompose (constructeur de copie)
 
 
-TrajetCompose::TrajetCompose () : trajets(new Trajet* [0]), nbTrajets(0)
+TrajetCompose::TrajetCompose () : trajets(new Trajet* [1]), nbTrajets(0)
 // Algorithme :
 //
 {

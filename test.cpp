@@ -3,11 +3,12 @@
 #include "TrajetCompose.h"
 #include "Catalogue.h"
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 //programme utilisé pour les tests internes et le débuggage
 int main(){
-    TrajetSimple ts1("ts1","lyon","bordeaux","train");
+    /*TrajetSimple ts1("ts1","lyon","bordeaux","train");
     TrajetSimple* pt_ts1 = new TrajetSimple;
     pt_ts1=&ts1;
     TrajetSimple ts2("ts2","bordeaux","paris","avion");
@@ -22,7 +23,8 @@ int main(){
     ts1.~TrajetSimple();
     ts2.~TrajetSimple();
     tc.~TrajetCompose();
-    //Catalogue C;
-    //C.Options();
+    */
+    Catalogue C;
+    C.Options();
 	return 0;
 }

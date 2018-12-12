@@ -44,12 +44,12 @@ public:
     void Afficher();
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Catalogue & operator = ( const Catalogue & unCatalogue );
+   /* Catalogue & operator = ( const Catalogue & unCatalogue );
     // Mode d'emploi :
     //
     // Contrat :
     //
-
+*/
 
 //-------------------------------------------- Constructeurs - destructeur
     Catalogue ( const Catalogue & unCatalogue );

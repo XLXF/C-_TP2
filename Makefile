@@ -5,7 +5,7 @@ CXXFLAGS=-Wall -Werror -g -ansi -pedantic #-DMAP
 LDFLAGS=-lm
 
 EXEC=main
-SRC=test.cpp Trajet.cpp TrajetSimple.cpp TrajetCompose.cpp
+SRC=test.cpp Trajet.cpp TrajetSimple.cpp TrajetCompose.cpp Catalogue.cpp
 OBJECTS=$(SRC:.cpp=.o)
 
 .PHONY: target clean realclean

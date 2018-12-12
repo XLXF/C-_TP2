@@ -23,27 +23,30 @@ using namespace std;
 //---------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-/*void Trajet:: Afficher()
+void Trajet:: Afficher() const
 {
 }
 
 const char* Trajet:: villeDepart() const
 {
-
+ return "rien";
 }
 
 const char* Trajet:: villeArrive() const
 {
+ return "rien";
 }
 
 const char* Trajet:: Transport() const
 {
+ return "rien";
 }
 
 const char* Trajet:: Nom() const
 {
+ return "rien";
 }
-*/
+
 
 //------------------------------------------------- Surcharge d'opérateurs
 Trajet & Trajet::operator = ( const Trajet & unTrajet )
