@@ -84,6 +84,7 @@ using namespace std;
 			new_elmts[i] = elmts[i];
 		}
 		new_elmts[nbElmts] = ts;
+		delete [] elmts;
 		elmts = new_elmts;
 		delete [] new_elmts;
 	}
@@ -130,8 +131,8 @@ using namespace std;
 		{
 			new_elmts[i] = elmts[i];
 		}
-		new_elmts[nbElmts]
-		 = TC;
+		new_elmts[nbElmts]= TC;
+		delete [] elmts;
 		elmts = new_elmts;
 		delete [] new_elmts;
 	}
@@ -203,7 +204,7 @@ Catalogue::Catalogue()
     cout << "Appel au constructeur de <Catalogue>" << endl;
 #endif
 nbElmts = 0;
-elmts = new Trajet*[0];
+elmts = new Trajet*[1];
 } //----- Fin de Catalogue
 
 //------------------------------------------------- Surcharge d'opérateurs
@@ -215,7 +216,12 @@ Catalogue::~Catalogue ( )
 #ifdef MAP
     cout << "Appel au destructeur de <Catalogue>" << endl;
 #endif
-delete [] elmts;
+	for (int i =0; i<nbElmts;i++)
+    {
+		elmts[i]->~Trajet();
+	}
+  	delete [] elmts;
+  	elmts = NULL;
 
 } //----- Fin de ~Catalogue
 

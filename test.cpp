@@ -1,7 +1,7 @@
 #include "Trajet.h"
 #include "TrajetSimple.h"
 #include "TrajetCompose.h"
-//#include "Catalogue.h"
+#include "Catalogue.h"
 #include <iostream>
 using namespace std;
 
@@ -19,6 +19,9 @@ int main(){
     tc.AjoutTrajet(pt_ts1);
     tc.AjoutTrajet(pt_ts2);
     tc.Afficher();
+    ts1.~TrajetSimple();
+    ts2.~TrajetSimple();
+    tc.~TrajetCompose();
     //Catalogue C;
     //C.Options();
 	return 0;

@@ -74,6 +74,7 @@ TrajetCompose & TrajetCompose::operator = ( const TrajetCompose & unTrajetCompos
         trajets[i] = new TrajetSimple(unTrajetCompose.trajets[i]->Nom(),unTrajetCompose.trajets[i]->villeDepart(),unTrajetCompose.trajets[i]->villeArrive(),unTrajetCompose.trajets[i]->Transport());
     }
     return *this;
+    
 } //----- Fin de operator =
 
 
@@ -85,11 +86,16 @@ TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose )
 #ifdef MAP
     cout << "Appel au constructeur de copie de <TrajetCompose>" << endl;
 #endif
-
+    nbTrajets = unTrajetCompose.nbTrajets;
+    trajets = new Trajet*[nbTrajets];
+    for(int i = 0; i<nbTrajets;i++)
+    {
+        trajets[i] = new TrajetSimple(unTrajetCompose.trajets[i]->Nom(),unTrajetCompose.trajets[i]->villeDepart(),unTrajetCompose.trajets[i]->villeArrive(),unTrajetCompose.trajets[i]->Transport());
+    }
 } //----- Fin de TrajetCompose (constructeur de copie)
 
 
-TrajetCompose::TrajetCompose () : trajets(new Trajet* [1]), nbTrajets(0)
+TrajetCompose::TrajetCompose () : trajets(new Trajet* [0]), nbTrajets(0)
 // Algorithme :
 //
 {

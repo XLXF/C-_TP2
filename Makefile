@@ -4,7 +4,6 @@ LD=g++
 CXXFLAGS=-Wall -Werror -g -ansi -pedantic #-DMAP
 LDFLAGS=-lm
 
-
 EXEC=main
 SRC=test.cpp Trajet.cpp TrajetSimple.cpp TrajetCompose.cpp
 OBJECTS=$(SRC:.cpp=.o)
