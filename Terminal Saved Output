@@ -1,0 +1,108 @@
+Last login: Wed Dec 12 11:49:57 on ttys000
+You have new mail.
+Corentin-PC:~ lung$ cd Desktop/
+Corentin-PC:Desktop lung$ cd TP\ Xiaofan/
+Corentin-PC:TP Xiaofan lung$ cd C++/
+Corentin-PC:C++ lung$ cd TP_2/
+Corentin-PC:TP_2 lung$ cd C-_TP2/
+Corentin-PC:C-_TP2 lung$ make
+g++ -o main test.o Trajet.o TrajetSimple.o TrajetCompose.o Catalogue.o -lm
+./main
+Bonjour!
+Rentrez '1' si vous voulez ajouter un trajet simple
+Rentrez '2' si vous voulez ajouter un trajet composé
+Rentrez '3' si vous voulez chercher un trajet
+Rentrez '4' si vous voulez afficher tous les trajet
+Rentrez '5' si vous voulez quitter
+1
+Veuillez rentrez un Trajet Simple...
+Veuillez rentrez nom du Trajet
+ts1
+Veuillez rentrez la ville de départ:
+paris
+Veuillez rentrez la ville d'arrivé:
+lyon 
+Veuillez rentrez la moyenne de transport:
+bus
+Trajet simple a été ajouté dans le catalogue
+Rentrez '1' si vous voulez ajouter un trajet simple
+Rentrez '2' si vous voulez ajouter un trajet composé
+Rentrez '3' si vous voulez chercher un trajet
+Rentrez '4' si vous voulez afficher tous les trajet
+Rentrez '5' si vous voulez quitter
+2
+Veuillez rentrez un Trajet Composé..
+Veuillez rentrez nom du Trajet
+tc1-1
+Veuillez rentrez la ville de départ:
+nice
+Veuillez rentrez la ville d'arrivé 
+lyon
+Veuillez rentrez la moyenne de transport:
+voiture
+Veuillez rentrez nom du Trajet prochain
+tc1-2
+Veuillez rentrez la ville suivante 
+paris
+Veuillez rentrez la moyenne de transport:
+train
+Veuillez rentrez la ville suivante ( ou 'ok' pour valider Trajet)
+ok
+Trajet composé a été ajouté dans le catalogue
+Rentrez '1' si vous voulez ajouter un trajet simple
+Rentrez '2' si vous voulez ajouter un trajet composé
+Rentrez '3' si vous voulez chercher un trajet
+Rentrez '4' si vous voulez afficher tous les trajet
+Rentrez '5' si vous voulez quitter
+4
+ts1 : de paris a lyon en bus
+tc1-1 : de nice a lyon en voiture
+tc1-2 : de lyon a paris en train
+Rentrez '1' si vous voulez ajouter un trajet simple
+Rentrez '2' si vous voulez ajouter un trajet composé
+Rentrez '3' si vous voulez chercher un trajet
+Rentrez '4' si vous voulez afficher tous les trajet
+Rentrez '5' si vous voulez quitter
+3
+Veuillez rentrez la ville de départ:
+paris
+Veuillez rentrez la ville d'arrivé:
+lyon
+Recherche en cours...
+Opps, trajet non trouvé
+Rentrez '1' si vous voulez ajouter un trajet simple
+Rentrez '2' si vous voulez ajouter un trajet composé
+Rentrez '3' si vous voulez chercher un trajet
+Rentrez '4' si vous voulez afficher tous les trajet
+Rentrez '5' si vous voulez quitter
+3
+Veuillez rentrez la ville de départ:
+nice
+Veuillez rentrez la ville d'arrivé:
+lyon
+Recherche en cours...
+Trajet trouvé:
+tc1-1 : de nice a lyon en voiture
+tc1-2 : de lyon a paris en train
+Rentrez '1' si vous voulez ajouter un trajet simple
+Rentrez '2' si vous voulez ajouter un trajet composé
+Rentrez '3' si vous voulez chercher un trajet
+Rentrez '4' si vous voulez afficher tous les trajet
+Rentrez '5' si vous voulez quitter
+3
+Veuillez rentrez la ville de départ:
+nice
+Veuillez rentrez la ville d'arrivé:
+paris
+Recherche en cours...
+Opps, trajet non trouvé
+Rentrez '1' si vous voulez ajouter un trajet simple
+Rentrez '2' si vous voulez ajouter un trajet composé
+Rentrez '3' si vous voulez chercher un trajet
+Rentrez '4' si vous voulez afficher tous les trajet
+Rentrez '5' si vous voulez quitter
+5
+BYE
+make: *** [Makefile:22: main] Segmentation fault: 11
+make: *** Deleting file 'main'
+Corentin-PC:C-_TP2 lung$ 

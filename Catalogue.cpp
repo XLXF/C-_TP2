@@ -28,14 +28,14 @@ using namespace std;
 	void Catalogue::Options()
 	{
 		int option=0;
-		cout<<"Bonjour!"<<endl;
+                cout<<"Bonjour!"<<"\r\n";
 		do
 		{
-			cout<<"Rentrez '1' si vous voulez ajouter un trajet simple"<<endl;
-			cout<<"Rentrez '2' si vous voulez ajouter un trajet composé"<<endl;
-			cout<<"Rentrez '3' si vous voulez chercher un trajet simple"<<endl;
-			cout<<"Rentrez '4' si vous voulez afficher tous les trajet"<<endl;
-			cout<<"Rentrez '5' si vous voulez quitter"<<endl;
+                        cout<<"Rentrez '1' si vous voulez ajouter un trajet simple"<<"\r\n";
+                        cout<<"Rentrez '2' si vous voulez ajouter un trajet composé"<<"\r\n";
+                        cout<<"Rentrez '3' si vous voulez chercher un trajet"<<"\r\n";
+                        cout<<"Rentrez '4' si vous voulez afficher tous les trajet"<<"\r\n";
+                        cout<<"Rentrez '5' si vous voulez quitter"<<"\r\n";
 			cin>>option;
 			switch(option)
 			{
@@ -52,10 +52,10 @@ using namespace std;
 					Afficher();
 					break;
 				case 5:
-					cout<<"BYE"<<endl;
+                                        cout<<"BYE"<<"\r\n";
 					break;
 				default:
-					cout<<"Veuillez rentrez un chiffre entre 1 et 5"<<endl;
+                                        cout<<"Veuillez rentrez un chiffre entre 1 et 5"<<"\r\n";
 					break;
 			}
 		}while (option != 5);
@@ -69,14 +69,14 @@ using namespace std;
 		char* villeArrive=new char[500];
 		char* mTrans=new char[500];
 		Trajet** new_elmts ;
-		cout<<"Veuillez rentrez un Trajet Simple..."<<endl;
-		cout<<"Veuillez rentrez nom du Trajet"<<endl;
+                cout<<"Veuillez rentrez un Trajet Simple..."<<"\r\n";
+                cout<<"Veuillez rentrez nom du Trajet"<<"\r\n";
 		cin>>nom;
-		cout<<"Veuillez rentrez la ville de départ:"<<endl;
+                cout<<"Veuillez rentrez la ville de départ:"<<"\r\n";
 		cin>>villeDepart;
-		cout<<"Veuillez rentrez la ville d'arrivé:"<<endl;
+                cout<<"Veuillez rentrez la ville d'arrivé:"<<"\r\n";
 		cin>>villeArrive;
-		cout<<"Veuillez rentrez la moyenne de transport:"<<endl;
+                cout<<"Veuillez rentrez la moyenne de transport:"<<"\r\n";
 		cin>>mTrans;
 		TrajetSimple* ts = new TrajetSimple(nom, villeDepart,villeArrive,mTrans);
 		new_elmts = new Trajet* [nbElmts + 1];
@@ -88,7 +88,7 @@ using namespace std;
 		delete [] elmts;
 		elmts = new_elmts;
 		nbElmts++;
-		cout<<"Trajet simple a été ajouté dans le catalogue"<<endl;
+                cout<<"Trajet simple a été ajouté dans le catalogue"<<"\r\n";
 	}
 	void Catalogue::Ajouter_TC ( )
 	{
@@ -100,32 +100,32 @@ using namespace std;
 		new_elmts = new Trajet* [nbElmts + 1];
 		TrajetCompose *TC = new TrajetCompose;
 		int nbTrajet = 0;
-		cout<<"Veuillez rentrez un Trajet Composé.."<<endl;
-		cout<<"Veuillez rentrez nom du Trajet"<<endl;
+                cout<<"Veuillez rentrez un Trajet Composé.."<<"\r\n";
+                cout<<"Veuillez rentrez nom du Trajet"<<"\r\n";
 		cin>>nom;
-		cout<<"Veuillez rentrez la ville de départ:"<<endl;
+                cout<<"Veuillez rentrez la ville de départ:"<<"\r\n";
 		cin>>villeDepart;
-		cout<<"Veuillez rentrez la ville d'arrivé "<<endl;
+                cout<<"Veuillez rentrez la ville d'arrivé "<<"\r\n";
 		cin>>villeArrive;
 		nbTrajet ++;
-		cout<<"Veuillez rentrez la moyenne de transport:"<<endl;
+                cout<<"Veuillez rentrez la moyenne de transport:"<<"\r\n";
 		cin>>mTrans;
 		TrajetSimple *ts = new TrajetSimple(nom, villeDepart,villeArrive,mTrans);
 		TC->AjoutTrajet(ts);
 		do
 		{
 
-			villeDepart = villeArrive;
-			cout<<"Veuillez rentrez nom du Trajet prochain"<<endl;
+                        strcpy(villeDepart, villeArrive);
+                        cout<<"Veuillez rentrez nom du Trajet prochain"<<"\r\n";
 			cin>>nom;
-			cout<<"Veuillez rentrez la ville suivante "<<endl;
+                        cout<<"Veuillez rentrez la ville suivante "<<"\r\n";
 			cin>>villeArrive;
 			nbTrajet ++;
-			cout<<"Veuillez rentrez la moyenne de transport:"<<endl;
+                        cout<<"Veuillez rentrez la moyenne de transport:"<<"\r\n";
 			cin>>mTrans;
 			ts = new TrajetSimple(nom, villeDepart,villeArrive,mTrans);
 			TC->AjoutTrajet(ts);
-			cout<<"Veuillez rentrez la ville suivante ( ou 'ok' pour valider Trajet)"<<endl;
+                        cout<<"Veuillez rentrez la ville suivante ( ou 'ok' pour valider Trajet)"<<"\r\n";
 			cin>>villeArrive;
 		}while(strcmp(villeArrive,"ok"));
 
@@ -137,7 +137,7 @@ using namespace std;
 		delete [] elmts;
 		elmts = new_elmts;
 		nbElmts++;
-		cout<<"Trajet composé a été ajouté dans le catalogue"<<endl;
+                cout<<"Trajet composé a été ajouté dans le catalogue"<<"\r\n";
 	}
 
 //------------------------------------------------- Surcharge d'opérateurs
@@ -161,7 +161,7 @@ void Catalogue::Afficher()
   //
 {
 #ifdef MAP
-  cout << "Appel au Affichage de <Catalogue>" << endl;
+  cout << "Appel au Affichage de <Catalogue>" << "\r\n";
 #endif
   for(int i = 0; i<nbElmts;i++)
   {
@@ -173,25 +173,25 @@ void Catalogue::Recherche()
 {
 	char* villeDepart=new char[500];
 	char* villeArrive=new char[500];
-	cout<<"Veuillez rentrez la ville de départ:"<<endl;
+        cout<<"Veuillez rentrez la ville de départ:"<<"\r\n";
 	cin>>villeDepart;
-	int n =strlen(villeDepart)+1;
-	char* villeD = new char[n];
-	strncpy(villeD,villeDepart,n-1);
-	cout<<"Veuillez rentrez la ville d'arrivé:"<<endl;
+        int n =strlen(villeDepart);
+        char* villeD = new char[n+1];
+        strncpy(villeD,villeDepart,n);
+        cout<<"Veuillez rentrez la ville d'arrivé:"<<"\r\n";
 	cin>>villeArrive;
-	n =strlen(villeArrive)+1;
-	char* villeA = new char[n];
-	strncpy(villeA,villeArrive,n-1);
-	cout<<"Recherche en cours..."<<endl;
+        int m =strlen(villeArrive);
+        char* villeA = new char[m+1];
+        strncpy(villeA,villeArrive,m);
+        cout<<"Recherche en cours..."<<"\r\n";
 	bool trouve = false;
 	for(int i = 0;i <nbElmts;i++)
 	{
-		cout<<elmts[i]->villeDepart()<<endl;
-		cout<<elmts[i]->villeArrive()<<endl;
-		if(!strcmp(elmts[i]->villeDepart(),villeD)&&strcmp(elmts[i]->villeArrive(),villeA))
+                //cout<<elmts[i]->villeDepart()<<"\r\n";
+                //cout<<elmts[i]->villeArrive()<<"\r\n";
+                if(!strncmp(elmts[i]->villeDepart(),villeD,n)&&strncmp(elmts[i]->villeArrive(),villeA,m))
 		{
-			cout<<"Trajet trouvé:"<<endl;
+                        cout<<"Trajet trouvé:"<<"\r\n";
 			elmts[i]->Afficher();
 			trouve = true;
 			
@@ -200,7 +200,7 @@ void Catalogue::Recherche()
 
 	if(!trouve)
 	{
-		cout<<"Opps, trajet non trouvé"<<endl;
+                cout<<"Opps, trajet non trouvé"<<"\r\n";
 	}
 }
 
@@ -211,7 +211,7 @@ Catalogue::Catalogue ( const Catalogue & unCatalogue )
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Catalogue>" << endl;
+    cout << "Appel au constructeur de copie de <Catalogue>" << "\r\n";
 #endif
 
 } //----- Fin de Catalogue (constructeur de copie)
@@ -221,7 +221,7 @@ Catalogue::Catalogue()
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Catalogue>" << endl;
+    cout << "Appel au constructeur de <Catalogue>" << "\r\n";
 #endif
 elmts = new Trajet*[1];
 nbElmts = 0;
@@ -234,7 +234,7 @@ Catalogue::~Catalogue ( )
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Catalogue>" << endl;
+    cout << "Appel au destructeur de <Catalogue>" << "\r\n";
 #endif
 	for (int i =0; i<nbElmts;i++)
     {

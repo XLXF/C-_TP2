@@ -26,5 +26,6 @@ int main(){
     */
     Catalogue C;
     C.Options();
+    C.~Catalogue();
 	return 0;
 }

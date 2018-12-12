@@ -63,7 +63,7 @@ Trajet::Trajet ( const Trajet & unTrajet )
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Trajet>" << endl;
+    cout << "Appel au constructeur de copie de <Trajet>" << "\r\n";
 #endif
 } //----- Fin de Trajet (constructeur de copie)
 
@@ -73,7 +73,7 @@ Trajet::Trajet (const char* N,const char* VD,const char* VA)
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Trajet>" << endl;
+    cout << "Appel au constructeur de <Trajet>" << "\r\n";
 #endif
     nom = new char[strlen(N)+1];
     strcpy(nom,N);
@@ -92,7 +92,7 @@ Trajet::~Trajet ( )
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Trajet>" << endl;
+    cout << "Appel au destructeur de <Trajet>" << "\r\n";
 #endif
 delete nom;
 delete villeD;

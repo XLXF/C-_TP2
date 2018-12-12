@@ -28,7 +28,7 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 	void TrajetCompose::Afficher () const
 	{
-		cout<< "Trajet compose: "<<endl;
+
 		for (int i=0; i < nbTrajets; i++)
 		{
 			trajets[i]->Afficher();
@@ -62,7 +62,7 @@ using namespace std;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-TrajetCompose & TrajetCompose::operator = ( const TrajetCompose & unTrajetCompose )
+/*TrajetCompose & TrajetCompose::operator = ( const TrajetCompose & unTrajetCompose )
 // Algorithme :
 //
 {
@@ -76,7 +76,7 @@ TrajetCompose & TrajetCompose::operator = ( const TrajetCompose & unTrajetCompos
     return *this;
     
 } //----- Fin de operator =
-
+*/
 
 //-------------------------------------------- Constructeurs - destructeur
 TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose )
@@ -84,7 +84,7 @@ TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose )
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <TrajetCompose>" << endl;
+    cout << "Appel au constructeur de copie de <TrajetCompose>" << "\r\n";
 #endif
     nbTrajets = unTrajetCompose.nbTrajets;
     trajets = new Trajet*[nbTrajets];
@@ -100,14 +100,14 @@ TrajetCompose::TrajetCompose () : trajets(new Trajet* [1]), nbTrajets(0)
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <TrajetCompose>" << endl;
+    cout << "Appel au constructeur de <TrajetCompose>" << "\r\n";
 #endif
 } //----- Fin de TrajetCompose
 
 void TrajetCompose::AjoutTrajet(TrajetSimple *ts)
 {
 #ifdef MAP
-    cout << "Appel au fonction ajout trajet de <TrajetCompose>" << endl;
+    cout << "Appel au fonction ajout trajet de <TrajetCompose>" << "\r\n";
 #endif
 trajets [nbTrajets] = new TrajetSimple(ts->Nom(),ts->villeDepart(),ts->villeArrive(),ts->Transport());
 nbTrajets ++;
@@ -118,7 +118,7 @@ TrajetCompose::~TrajetCompose ( )
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <TrajetCompose>" << endl;
+    cout << "Appel au destructeur de <TrajetCompose>" << "\r\n";
 #endif
     for (int i =0; i<nbTrajets;i++)
     {

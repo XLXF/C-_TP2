@@ -50,7 +50,7 @@ const char* TrajetSimple:: Nom() const
 }
 
 //------------------------------------------------- Surcharge d'opérateurs
-TrajetSimple & TrajetSimple::operator = ( const TrajetSimple & unTrajetSimple )
+/*TrajetSimple & TrajetSimple::operator = ( const TrajetSimple & unTrajetSimple )
 // Algorithme :
 //
 {
@@ -66,14 +66,14 @@ TrajetSimple & TrajetSimple::operator = ( const TrajetSimple & unTrajetSimple )
     return *this;
 } //----- Fin de operator =
 
-
+*/
 //-------------------------------------------- Constructeurs - destructeur
 TrajetSimple::TrajetSimple ( const TrajetSimple &unTrajetSimple)
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <TrajetSimple>" << endl;
+    cout << "Appel au constructeur de copie de <TrajetSimple>" << "\r\n";
 #endif
     nom = new char(strlen(unTrajetSimple.nom)+1);
     strcpy(nom,unTrajetSimple.nom);
@@ -91,7 +91,7 @@ TrajetSimple::TrajetSimple ( const char* N, const char* VD,const char* VA ,const
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <TrajetSimple>" << endl;
+    cout << "Appel au constructeur de <TrajetSimple>" << "\r\n";
 #endif
     nom = new char[strlen(N)+1];
     strcpy(nom,N);
@@ -99,6 +99,7 @@ TrajetSimple::TrajetSimple ( const char* N, const char* VD,const char* VA ,const
     strcpy(villeD,VD);
     villeA = new char[strlen(VA)+1];
     strcpy(villeA,VA);
+
     mTrans = new char[strlen(MT)+1];
     strcpy(mTrans,MT);
 } //----- Fin de TrajetSimple
@@ -106,7 +107,7 @@ TrajetSimple::TrajetSimple ( const char* N, const char* VD,const char* VA ,const
 TrajetSimple::TrajetSimple ()
 {
 #ifdef MAP
-    cout << "Appel au constructeur sans param de <TrajetSimple>" << endl;
+    cout << "Appel au constructeur sans param de <TrajetSimple>" << "\r\n";
 #endif
 }
 
@@ -115,7 +116,7 @@ TrajetSimple::~TrajetSimple ( )
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <TrajetSimple>" << endl;
+    cout << "Appel au destructeur de <TrajetSimple>" << "\r\n";
 #endif
 delete mTrans;
 } //----- Fin de ~TrajetSimple
