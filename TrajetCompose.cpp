@@ -28,22 +28,22 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 	void TrajetCompose::Afficher () const
 	{
-		int i;
-		for (i=0; i < nbTrajets; i++)
+		cout<< "Trajet compose: "<<endl;
+		for (int i=0; i < nbTrajets; i++)
 		{
-			trajets[i]->Trajet::Afficher();
+			trajets[i]->Afficher();
 		}
 	}
 
     const char* TrajetCompose:: villeDepart() const
     {
-        return trajets[0]->Trajet::villeDepart();
+        return trajets[0]->villeDepart();
     }
 
     const char* TrajetCompose:: villeArrive() const
 
     {
-        return trajets[nbTrajets-1]->Trajet::villeArrive();
+        return trajets[nbTrajets-1]->villeArrive();
     }
     const char* TrajetCompose:: Transport() const
 
@@ -85,6 +85,7 @@ TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose )
 #ifdef MAP
     cout << "Appel au constructeur de copie de <TrajetCompose>" << endl;
 #endif
+
 } //----- Fin de TrajetCompose (constructeur de copie)
 
 
